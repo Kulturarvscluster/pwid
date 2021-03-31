@@ -4,13 +4,11 @@ output: html_notebook
 ---
 
 ```{r}
+library(sparklyr)
+library(dplyr)
+library(lubridate)
 library(here)
 ```
-
-```{r}
-2+2
-```
-
 
 # PWID
 
@@ -46,13 +44,9 @@ elem-url: crawl URL
 
 # Create connection to the cluster
 
+
 ```{r}
-setwd("~/Probing_002")
-```
-
-
-```{r, eval=FALSE}
-source("common/spark_util.R")
+source(here::here("src/spark_util.R"))
 ```
 
 Vi har brug for at sætte tidszonen for senere at kunne udskrive crawl tidspunktet i UTC+0. Dette lærte Asger jeg jeg fra [denne SO](https://stackoverflow.com/a/52365367). Det viste sig også at kun `conf$spark.sql.session.timeZone <- "UTC"` er nødvendig.
@@ -69,8 +63,6 @@ sc <- spark_connect(
    config = conf
 )
 ```
-
-
 
 
 # PoC for 2010
@@ -100,40 +92,47 @@ glimpse(solr_corpus)
 tally(solr_corpus)
 ```
 
-## Create PWID
-
-Datoformatet skal være `YYYY-MM-DDThh:mm:ssZ`, men er fx "Sat Feb 20 03:15:14 CET 2010". Så nu skal jeg lige lære at manipulerer datoer i Hive.
-
-[Hive manual](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-DateFunctions)
-
-Okay, dette base R kan klare datoerne:
+## Looking into date conversion
 
 ```{r}
-strptime("Sat Feb 20 03:15:14 CET 2010", "%a %b %d %H:%M:%S CET %Y")
+solr_corpus %>% head(20) %>% collect() -> solr_head
 ```
 
-Men kan den bruges i en Hive/sparklyr?
-
-Nej, det kan den ikke. Jeg ender
-
+```{r}
+solr_head %>% 
+   select(unix_time, solr_crawl_date, solr_unix_time) %>% 
+   mutate(
+      unix_time_date = as_datetime(unix_time),
+      solr_unix_time_date = as_datetime(solr_unix_time)) %>% 
+   select(solr_crawl_date, solr_unix_time_date, unix_time_date)
 ```
-Error in View : org.apache.spark.sql.AnalysisException: Undefined function: 'strptime'. This function is neither a registered temporary function nor a permanent function registered in the database 'default'.; line 2 pos 700
+
+Okay, now try the same in sparklyr
+
+```{r}
+solr_corpus %>% 
+   mutate(pwid_date = from_unixtime(solr_unix_time,"yyyy-MM-dd'T'HH:mm:ss'Z'")) %>% 
+   select(pwid_date, solr_crawl_date, everything()) %>% 
+   head(5)
 ```
 
-Så, jeg er tvunget til at få Hives dato-gymnastik til at fungere.
+Så er der styr på dato!
 
+pwid_date = from_unixtime(solr_unix_time,"yyyy-MM-dd'T'HH:mm:ss'Z'")
 
-## forsøg med at sætte tidszone i Spark
+## Create PWID
 
 ```{r}
 archive <- "netarkivet.dk"
 
 solr_corpus %>% 
-   head(10) %>% 
-   mutate(pwid_datetime = from_unixtime(unix_timestamp(solr_crawl_date ,'EEE MMM d H:m:s z yyyy'), "YYYY-MM-dd'T'HH:mm:ss'Z'")) %>% 
+   mutate(pwid_datetime = from_unixtime(solr_unix_time,"yyyy-MM-dd'T'HH:mm:ss'Z'")) %>% 
    mutate(pwid = paste("urn","pwid", archive, pwid_datetime, "part", uri, sep = ":")) %>%
-   select(pwid_datetime, solr_crawl_date) -> pwid_small;pwid_small
+   select(pwid)  %>% 
+   head(10) %>% 
+   collect()
 ```
+
 
 ## Endelig beregning af PWID
 
@@ -141,7 +140,7 @@ solr_corpus %>%
 archive <- "netarkivet.dk"
 
 sdf_pwid <- solr_corpus %>% 
-   mutate(pwid_datetime = from_unixtime(unix_timestamp(solr_crawl_date ,'EEE MMM d H:m:s z yyyy'), "YYYY-MM-dd'T'HH:mm:ss'Z'")) %>% 
+   mutate(pwid_datetime = from_unixtime(solr_unix_time,"yyyy-MM-dd'T'HH:mm:ss'Z'")) %>% 
    mutate(pwid = paste("urn","pwid", archive, pwid_datetime, "part", uri, sep = ":")) %>%
    select(pwid) %>% 
    compute(name = "sdf_pwid") # caches in Spark memory
