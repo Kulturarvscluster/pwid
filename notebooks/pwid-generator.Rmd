@@ -118,7 +118,7 @@ solr_corpus %>%
 
 Så er der styr på dato!
 
-pwid_date = from_unixtime(solr_unix_time,"yyyy-MM-dd'T'HH:mm:ss'Z'")
+`pwid_date = from_unixtime(solr_unix_time,"yyyy-MM-dd'T'HH:mm:ss'Z'")`
 
 ## Create PWID
 
