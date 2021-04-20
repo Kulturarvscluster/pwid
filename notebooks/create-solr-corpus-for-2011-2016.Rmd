@@ -5,31 +5,47 @@ date: 2021-03-31
 output: html_notebook
 ---
 
+```{r libs}
+library(dplyr)
+library(sparklyr)
+library(here)
+```
 
-# Kode til at skabe Solr korpus
+```{r custom_functions}
+source(here::here("src/spark_util.R"))
+```
 
-```{r}
-#setwd("~/projects/etl2-netarkivet") source("../common/spark_util.R")
-
+```{r connect}
 conf <- spark_config()
-#Set at vi max bruger 40 executors. Det er ca. 3/4 af clusteret og vil #derfor lade os lave andet
-conf$spark.dynamicAllocation.maxExecutors <- 40
-conf$spark.sql.files.maxPartitionBytes = "2147483647" #conf$spark.sql.files.openCostInBytes="2147483647"
 
-#This will hopefully allow the job to work through heavy loads. Default is 30, which caused
+# brug max 40 executors. Det er ca. 3/4 af clusteret og vil derfor lade os lave andet
+conf$spark.dynamicAllocation.maxExecutors <- 40
+conf$spark.sql.files.maxPartitionBytes = "2147483647" 
+# conf$spark.sql.files.openCostInBytes="2147483647"
+
+# This will hopefully allow the job to work through heavy loads. Default is 30, which caused
+#
 # 9/04/09 13:25:35 ERROR TransportClientFactory: Exception while bootstrapping client after 30002 ms
 # java.lang.RuntimeException: java.util.concurrent.TimeoutException: Timeout waiting for task.
 # at org.spark_project.guava.base.Throwables.propagate(Throwables.java:160)
 # at org.apache.spark.network.client.TransportClient.sendRpcSync(TransportClient.java:275)
 # at org.apache.spark.network.sasl.SaslClientBootstrap.doBootstrap(SaslClientBootstrap.java:70)
 # at org.apache.spark.network.crypto.AuthClientBootstrap.doSaslAuth(AuthClientBootstrap.java:115) # at org.apache.spark.network.crypto.AuthClientBootstrap.doBootstrap(AuthClientBootstrap.java:74) conf$spark.shuffle.sasl.timeout <- '300s'
-#Should prevent the
-#https://community.hortonworks.com/content/supportkb/186413/errorjavaioioexception-filesystem- closed-when-runn.html
+#
+# Should prevent the
+# https://community.hortonworks.com/content/supportkb/186413/errorjavaioioexception-filesystem- closed-when-runn.html
 
 conf$fs.hdfs.impl.disable.cache <- TRUE
 conf$fs.file.impl.disable.cache <- TRUE
+```
+
+
+# Kode til at skabe Solr korpus
+
+
+```{r}
 chosen_year <- 2012
-source("config-data/paths.R")
+source(here::here("config-data/paths.R"))
 log_prefix <- chosen_year
 log("Starting")
 

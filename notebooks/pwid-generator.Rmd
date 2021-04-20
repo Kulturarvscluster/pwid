@@ -70,9 +70,9 @@ sc <- spark_connect(
 ## Test load af /datapool/dk-web-solr/solr-corpus/2010_corpus_solr-parquet
 
 ```{r}
-chosen_year <- 2010
+chosen_year <- 2011
 corpus_name <- paste0("corpus", chosen_year)
-corpus_path <- paste0("/datapool/dk-web-solr/solr-corpus/", chosen_year, "_corpus_solr-parquet")
+corpus_path <- paste0("/datapool/dk-web-solr/solr-corpus/", chosen_year, "_corpus_solr-parquet-without-dedup")
 
 
 solr_corpus <- spark_read_parquet(
