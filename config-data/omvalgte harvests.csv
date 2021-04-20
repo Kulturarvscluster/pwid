@@ -1,0 +1,9 @@
+corpus_id,name,type,harvest_num
+2011,2011-2-10MB,broad,
+2011,2011-2-8GB,broad,
+2011,meget_store_sites,selective,12
+2011,ministerier og styrelser,selective,9
+2012,2012-2-10MB,broad,
+2012,2012-2-8GB,broad,
+2012,meget_store_sites,selective,13
+2012,ministerier og styrelser,selective,11
