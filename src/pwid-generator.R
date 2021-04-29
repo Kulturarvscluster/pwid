@@ -8,7 +8,7 @@ message("pwid-generator.R <year> <path to corpus>")
 ## CONFIGURATION
 ##
 chosen_year <- args[1] # E.g. 2006
-corpus_path <- args[2] # E.g. /datapool/dk-web-solr/solr-corpus/2006_corpus_solr-parquet-without-dedup
+corpus_path <- args[2] # E.g. /datapool/dk-web-solr/solr-corpus/2006_corpus_solr-parquet
 
 archive <- "netarkivet.dk"
 corpus_name <- paste0("corpus", chosen_year)
@@ -56,7 +56,7 @@ conf$spark.sql.session.timeZone <- "UTC"
 spark_disconnect_all()
 sc <- spark_connect(
     master = 'yarn-client',
-    app_name = paste("pwidlist"),
+    app_name = paste0("pwidlist_",chosen_year),
     config = conf
 )
 
@@ -68,6 +68,7 @@ solr_corpus <- spark_read_parquet(
     memory = FALSE,
     overwrite = TRUE
 )
+number_of_pwids <- tally(solr_corpus) %>% collect()
 
 log("Create a PWID data frame in Spark memory")
 sdf_pwid <- solr_corpus %>% 
@@ -76,6 +77,8 @@ sdf_pwid <- solr_corpus %>%
     select(pwid) %>% 
     compute(name = "sdf_pwid") # caches in Spark memory
 
+message("## Generated ", number_of_pwids, " PWIDs")
+
 log("Write the PWID list to HDFS")
 spark_write_csv(
     sdf_pwid %>% sdf_coalesce(1),
@@ -83,6 +86,8 @@ spark_write_csv(
     mode = "overwrite",
     header = FALSE
 )
+message("## data stored at", pwidlist_path)
+message("##")
 message("########################################################################")
 message("##                                                                    ##")
 message("##                        END OF PROGRAM                              ##")

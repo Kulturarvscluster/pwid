@@ -1,0 +1,682 @@
+pwid-generator.R <year> <path to corpus>
+
+Vedhæfter pakke: ‘dplyr’
+
+De følgende objekter er maskerede fra ‘package:stats’:
+
+    filter, lag
+
+De følgende objekter er maskerede fra ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Vedhæfter pakke: ‘lubridate’
+
+Det følgende objekt er maskeret fra ‘package:base’:
+
+    date
+
+here() starts at /home/pmdp002/PWID
+
+Vedhæfter pakke: ‘here’
+
+Det følgende objekt er maskeret fra ‘package:lubridate’:
+
+    here
+
+Indlæser krævet pakke: rhdfs
+Indlæser krævet pakke: rJava
+
+HADOOP_CMD=/usr/bin/hadoop
+
+Be sure to run hdfs.init()
+21/04/20 15:08:19 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+21/04/20 15:08:20 WARN shortcircuit.DomainSocketFactory: The short-circuit local reads feature cannot be used because libhadoop cannot be loaded.
+########################################################################
+##                                                                    ##
+##                        BEGIN PROGRAM                               ##
+##                       2021-04-20 15:08:20
+##                                                                    ##
+########################################################################
+  
+##                        CONFIGURATION                               ##
+## YEAR: 2006                                                         ##
+## CORPUS_PATH: /datapool/dk-web-solr/solr-corpus/2006_corpus_solr-parquet
+  
+## SCRIPT: 2021-04-20 15:08:20 - Connect to the Spark cluster
+Registered S3 method overwritten by 'openssl':
+  method      from
+  print.bytes Rcpp
+## SCRIPT: 2021-04-20 15:08:41 - Load the given Solr data
+## SCRIPT: 2021-04-20 15:08:55 - Create a PWID data frame in Spark memory
+## Generated 167892081 PWIDs
+## SCRIPT: 2021-04-20 15:09:11 - Write the PWID list to HDFS
+## data stored at/projects/p002/pwid/2006_pwidlist
+##
+########################################################################
+##                                                                    ##
+##                        END OF PROGRAM                              ##
+##                       2021-04-20 15:23:08
+##                                                                    ##
+########################################################################
+pwid-generator.R <year> <path to corpus>
+
+Vedhæfter pakke: ‘dplyr’
+
+De følgende objekter er maskerede fra ‘package:stats’:
+
+    filter, lag
+
+De følgende objekter er maskerede fra ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Vedhæfter pakke: ‘lubridate’
+
+Det følgende objekt er maskeret fra ‘package:base’:
+
+    date
+
+here() starts at /home/pmdp002/PWID
+
+Vedhæfter pakke: ‘here’
+
+Det følgende objekt er maskeret fra ‘package:lubridate’:
+
+    here
+
+Indlæser krævet pakke: rhdfs
+Indlæser krævet pakke: rJava
+
+HADOOP_CMD=/usr/bin/hadoop
+
+Be sure to run hdfs.init()
+21/04/20 15:23:12 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+21/04/20 15:23:13 WARN shortcircuit.DomainSocketFactory: The short-circuit local reads feature cannot be used because libhadoop cannot be loaded.
+########################################################################
+##                                                                    ##
+##                        BEGIN PROGRAM                               ##
+##                       2021-04-20 15:23:13
+##                                                                    ##
+########################################################################
+  
+##                        CONFIGURATION                               ##
+## YEAR: 2007                                                         ##
+## CORPUS_PATH: /datapool/dk-web-solr/solr-corpus/2007_corpus_solr-parquet
+  
+## SCRIPT: 2021-04-20 15:23:13 - Connect to the Spark cluster
+Registered S3 method overwritten by 'openssl':
+  method      from
+  print.bytes Rcpp
+## SCRIPT: 2021-04-20 15:23:34 - Load the given Solr data
+## SCRIPT: 2021-04-20 15:23:56 - Create a PWID data frame in Spark memory
+## Generated 300828679 PWIDs
+## SCRIPT: 2021-04-20 15:24:20 - Write the PWID list to HDFS
+## data stored at/projects/p002/pwid/2007_pwidlist
+##
+########################################################################
+##                                                                    ##
+##                        END OF PROGRAM                              ##
+##                       2021-04-20 16:00:13
+##                                                                    ##
+########################################################################
+pwid-generator.R <year> <path to corpus>
+
+Vedhæfter pakke: ‘dplyr’
+
+De følgende objekter er maskerede fra ‘package:stats’:
+
+    filter, lag
+
+De følgende objekter er maskerede fra ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Vedhæfter pakke: ‘lubridate’
+
+Det følgende objekt er maskeret fra ‘package:base’:
+
+    date
+
+here() starts at /home/pmdp002/PWID
+
+Vedhæfter pakke: ‘here’
+
+Det følgende objekt er maskeret fra ‘package:lubridate’:
+
+    here
+
+Indlæser krævet pakke: rhdfs
+Indlæser krævet pakke: rJava
+
+HADOOP_CMD=/usr/bin/hadoop
+
+Be sure to run hdfs.init()
+21/04/20 16:00:17 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+21/04/20 16:00:18 WARN shortcircuit.DomainSocketFactory: The short-circuit local reads feature cannot be used because libhadoop cannot be loaded.
+########################################################################
+##                                                                    ##
+##                        BEGIN PROGRAM                               ##
+##                       2021-04-20 16:00:19
+##                                                                    ##
+########################################################################
+  
+##                        CONFIGURATION                               ##
+## YEAR: 2008                                                         ##
+## CORPUS_PATH: /datapool/dk-web-solr/solr-corpus/2008_corpus_solr-parquet
+  
+## SCRIPT: 2021-04-20 16:00:19 - Connect to the Spark cluster
+Registered S3 method overwritten by 'openssl':
+  method      from
+  print.bytes Rcpp
+## SCRIPT: 2021-04-20 16:00:39 - Load the given Solr data
+## SCRIPT: 2021-04-20 16:01:00 - Create a PWID data frame in Spark memory
+## Generated 332899148 PWIDs
+## SCRIPT: 2021-04-20 16:01:24 - Write the PWID list to HDFS
+## data stored at/projects/p002/pwid/2008_pwidlist
+##
+########################################################################
+##                                                                    ##
+##                        END OF PROGRAM                              ##
+##                       2021-04-20 16:48:55
+##                                                                    ##
+########################################################################
+pwid-generator.R <year> <path to corpus>
+
+Vedhæfter pakke: ‘dplyr’
+
+De følgende objekter er maskerede fra ‘package:stats’:
+
+    filter, lag
+
+De følgende objekter er maskerede fra ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Vedhæfter pakke: ‘lubridate’
+
+Det følgende objekt er maskeret fra ‘package:base’:
+
+    date
+
+here() starts at /home/pmdp002/PWID
+
+Vedhæfter pakke: ‘here’
+
+Det følgende objekt er maskeret fra ‘package:lubridate’:
+
+    here
+
+Indlæser krævet pakke: rhdfs
+Indlæser krævet pakke: rJava
+
+HADOOP_CMD=/usr/bin/hadoop
+
+Be sure to run hdfs.init()
+21/04/20 16:48:59 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+21/04/20 16:49:00 WARN shortcircuit.DomainSocketFactory: The short-circuit local reads feature cannot be used because libhadoop cannot be loaded.
+########################################################################
+##                                                                    ##
+##                        BEGIN PROGRAM                               ##
+##                       2021-04-20 16:49:00
+##                                                                    ##
+########################################################################
+  
+##                        CONFIGURATION                               ##
+## YEAR: 2009                                                         ##
+## CORPUS_PATH: /datapool/dk-web-solr/solr-corpus/2009_corpus_solr-parquet
+  
+## SCRIPT: 2021-04-20 16:49:00 - Connect to the Spark cluster
+Registered S3 method overwritten by 'openssl':
+  method      from
+  print.bytes Rcpp
+## SCRIPT: 2021-04-20 16:49:22 - Load the given Solr data
+## SCRIPT: 2021-04-20 16:49:45 - Create a PWID data frame in Spark memory
+## Generated 469981110 PWIDs
+## SCRIPT: 2021-04-20 16:50:13 - Write the PWID list to HDFS
+## data stored at/projects/p002/pwid/2009_pwidlist
+##
+########################################################################
+##                                                                    ##
+##                        END OF PROGRAM                              ##
+##                       2021-04-20 17:48:56
+##                                                                    ##
+########################################################################
+pwid-generator.R <year> <path to corpus>
+
+Vedhæfter pakke: ‘dplyr’
+
+De følgende objekter er maskerede fra ‘package:stats’:
+
+    filter, lag
+
+De følgende objekter er maskerede fra ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Vedhæfter pakke: ‘lubridate’
+
+Det følgende objekt er maskeret fra ‘package:base’:
+
+    date
+
+here() starts at /home/pmdp002/PWID
+
+Vedhæfter pakke: ‘here’
+
+Det følgende objekt er maskeret fra ‘package:lubridate’:
+
+    here
+
+Indlæser krævet pakke: rhdfs
+Indlæser krævet pakke: rJava
+
+HADOOP_CMD=/usr/bin/hadoop
+
+Be sure to run hdfs.init()
+21/04/20 17:49:01 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+21/04/20 17:49:02 WARN shortcircuit.DomainSocketFactory: The short-circuit local reads feature cannot be used because libhadoop cannot be loaded.
+########################################################################
+##                                                                    ##
+##                        BEGIN PROGRAM                               ##
+##                       2021-04-20 17:49:02
+##                                                                    ##
+########################################################################
+  
+##                        CONFIGURATION                               ##
+## YEAR: 2010                                                         ##
+## CORPUS_PATH: /datapool/dk-web-solr/solr-corpus/2010_corpus_solr-parquet
+  
+## SCRIPT: 2021-04-20 17:49:02 - Connect to the Spark cluster
+Registered S3 method overwritten by 'openssl':
+  method      from
+  print.bytes Rcpp
+## SCRIPT: 2021-04-20 17:49:23 - Load the given Solr data
+## SCRIPT: 2021-04-20 17:49:48 - Create a PWID data frame in Spark memory
+## Generated 473144026 PWIDs
+## SCRIPT: 2021-04-20 17:50:20 - Write the PWID list to HDFS
+## data stored at/projects/p002/pwid/2010_pwidlist
+##
+########################################################################
+##                                                                    ##
+##                        END OF PROGRAM                              ##
+##                       2021-04-20 18:44:00
+##                                                                    ##
+########################################################################
+pwid-generator.R <year> <path to corpus>
+
+Vedhæfter pakke: ‘dplyr’
+
+De følgende objekter er maskerede fra ‘package:stats’:
+
+    filter, lag
+
+De følgende objekter er maskerede fra ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Vedhæfter pakke: ‘lubridate’
+
+Det følgende objekt er maskeret fra ‘package:base’:
+
+    date
+
+here() starts at /home/pmdp002/PWID
+
+Vedhæfter pakke: ‘here’
+
+Det følgende objekt er maskeret fra ‘package:lubridate’:
+
+    here
+
+Indlæser krævet pakke: rhdfs
+Indlæser krævet pakke: rJava
+
+HADOOP_CMD=/usr/bin/hadoop
+
+Be sure to run hdfs.init()
+21/04/20 18:44:04 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+21/04/20 18:44:05 WARN shortcircuit.DomainSocketFactory: The short-circuit local reads feature cannot be used because libhadoop cannot be loaded.
+########################################################################
+##                                                                    ##
+##                        BEGIN PROGRAM                               ##
+##                       2021-04-20 18:44:05
+##                                                                    ##
+########################################################################
+  
+##                        CONFIGURATION                               ##
+## YEAR: 2011                                                         ##
+## CORPUS_PATH: /datapool/dk-web-solr/reexport/solr-corpus/2011_corpus_solr-parquet-without-dedup
+  
+## SCRIPT: 2021-04-20 18:44:05 - Connect to the Spark cluster
+Registered S3 method overwritten by 'openssl':
+  method      from
+  print.bytes Rcpp
+## SCRIPT: 2021-04-20 18:44:27 - Load the given Solr data
+## SCRIPT: 2021-04-20 18:44:47 - Create a PWID data frame in Spark memory
+## Generated 356766440 PWIDs
+## SCRIPT: 2021-04-20 18:45:12 - Write the PWID list to HDFS
+## data stored at/projects/p002/pwid/2011_pwidlist
+##
+########################################################################
+##                                                                    ##
+##                        END OF PROGRAM                              ##
+##                       2021-04-20 19:22:18
+##                                                                    ##
+########################################################################
+pwid-generator.R <year> <path to corpus>
+
+Vedhæfter pakke: ‘dplyr’
+
+De følgende objekter er maskerede fra ‘package:stats’:
+
+    filter, lag
+
+De følgende objekter er maskerede fra ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Vedhæfter pakke: ‘lubridate’
+
+Det følgende objekt er maskeret fra ‘package:base’:
+
+    date
+
+here() starts at /home/pmdp002/PWID
+
+Vedhæfter pakke: ‘here’
+
+Det følgende objekt er maskeret fra ‘package:lubridate’:
+
+    here
+
+Indlæser krævet pakke: rhdfs
+Indlæser krævet pakke: rJava
+
+HADOOP_CMD=/usr/bin/hadoop
+
+Be sure to run hdfs.init()
+21/04/20 19:22:22 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+21/04/20 19:22:23 WARN shortcircuit.DomainSocketFactory: The short-circuit local reads feature cannot be used because libhadoop cannot be loaded.
+########################################################################
+##                                                                    ##
+##                        BEGIN PROGRAM                               ##
+##                       2021-04-20 19:22:23
+##                                                                    ##
+########################################################################
+  
+##                        CONFIGURATION                               ##
+## YEAR: 2012                                                         ##
+## CORPUS_PATH: /datapool/dk-web-solr/reexport/solr-corpus/2012_corpus_solr-parquet-without-dedup
+  
+## SCRIPT: 2021-04-20 19:22:23 - Connect to the Spark cluster
+Registered S3 method overwritten by 'openssl':
+  method      from
+  print.bytes Rcpp
+## SCRIPT: 2021-04-20 19:22:44 - Load the given Solr data
+## SCRIPT: 2021-04-20 19:23:03 - Create a PWID data frame in Spark memory
+## Generated 366267978 PWIDs
+## SCRIPT: 2021-04-20 19:23:28 - Write the PWID list to HDFS
+## data stored at/projects/p002/pwid/2012_pwidlist
+##
+########################################################################
+##                                                                    ##
+##                        END OF PROGRAM                              ##
+##                       2021-04-20 20:04:50
+##                                                                    ##
+########################################################################
+pwid-generator.R <year> <path to corpus>
+
+Vedhæfter pakke: ‘dplyr’
+
+De følgende objekter er maskerede fra ‘package:stats’:
+
+    filter, lag
+
+De følgende objekter er maskerede fra ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Vedhæfter pakke: ‘lubridate’
+
+Det følgende objekt er maskeret fra ‘package:base’:
+
+    date
+
+here() starts at /home/pmdp002/PWID
+
+Vedhæfter pakke: ‘here’
+
+Det følgende objekt er maskeret fra ‘package:lubridate’:
+
+    here
+
+Indlæser krævet pakke: rhdfs
+Indlæser krævet pakke: rJava
+
+HADOOP_CMD=/usr/bin/hadoop
+
+Be sure to run hdfs.init()
+21/04/20 20:04:55 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+21/04/20 20:04:56 WARN shortcircuit.DomainSocketFactory: The short-circuit local reads feature cannot be used because libhadoop cannot be loaded.
+########################################################################
+##                                                                    ##
+##                        BEGIN PROGRAM                               ##
+##                       2021-04-20 20:04:56
+##                                                                    ##
+########################################################################
+  
+##                        CONFIGURATION                               ##
+## YEAR: 2013                                                         ##
+## CORPUS_PATH: /datapool/dk-web-solr/solr-corpus/2013_corpus_solr-parquet-without-dedup
+  
+## SCRIPT: 2021-04-20 20:04:56 - Connect to the Spark cluster
+Registered S3 method overwritten by 'openssl':
+  method      from
+  print.bytes Rcpp
+## SCRIPT: 2021-04-20 20:05:17 - Load the given Solr data
+## SCRIPT: 2021-04-20 20:05:35 - Create a PWID data frame in Spark memory
+## Generated 368262556 PWIDs
+## SCRIPT: 2021-04-20 20:06:01 - Write the PWID list to HDFS
+## data stored at/projects/p002/pwid/2013_pwidlist
+##
+########################################################################
+##                                                                    ##
+##                        END OF PROGRAM                              ##
+##                       2021-04-20 20:50:01
+##                                                                    ##
+########################################################################
+pwid-generator.R <year> <path to corpus>
+
+Vedhæfter pakke: ‘dplyr’
+
+De følgende objekter er maskerede fra ‘package:stats’:
+
+    filter, lag
+
+De følgende objekter er maskerede fra ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Vedhæfter pakke: ‘lubridate’
+
+Det følgende objekt er maskeret fra ‘package:base’:
+
+    date
+
+here() starts at /home/pmdp002/PWID
+
+Vedhæfter pakke: ‘here’
+
+Det følgende objekt er maskeret fra ‘package:lubridate’:
+
+    here
+
+Indlæser krævet pakke: rhdfs
+Indlæser krævet pakke: rJava
+
+HADOOP_CMD=/usr/bin/hadoop
+
+Be sure to run hdfs.init()
+21/04/20 20:50:05 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+21/04/20 20:50:06 WARN shortcircuit.DomainSocketFactory: The short-circuit local reads feature cannot be used because libhadoop cannot be loaded.
+########################################################################
+##                                                                    ##
+##                        BEGIN PROGRAM                               ##
+##                       2021-04-20 20:50:07
+##                                                                    ##
+########################################################################
+  
+##                        CONFIGURATION                               ##
+## YEAR: 2014                                                         ##
+## CORPUS_PATH: /datapool/dk-web-solr/solr-corpus/2014_corpus_solr-parquet-without-dedup
+  
+## SCRIPT: 2021-04-20 20:50:07 - Connect to the Spark cluster
+Registered S3 method overwritten by 'openssl':
+  method      from
+  print.bytes Rcpp
+## SCRIPT: 2021-04-20 20:50:28 - Load the given Solr data
+## SCRIPT: 2021-04-20 20:50:45 - Create a PWID data frame in Spark memory
+## Generated 316052138 PWIDs
+## SCRIPT: 2021-04-20 20:51:09 - Write the PWID list to HDFS
+## data stored at/projects/p002/pwid/2014_pwidlist
+##
+########################################################################
+##                                                                    ##
+##                        END OF PROGRAM                              ##
+##                       2021-04-20 21:26:04
+##                                                                    ##
+########################################################################
+pwid-generator.R <year> <path to corpus>
+
+Vedhæfter pakke: ‘dplyr’
+
+De følgende objekter er maskerede fra ‘package:stats’:
+
+    filter, lag
+
+De følgende objekter er maskerede fra ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Vedhæfter pakke: ‘lubridate’
+
+Det følgende objekt er maskeret fra ‘package:base’:
+
+    date
+
+here() starts at /home/pmdp002/PWID
+
+Vedhæfter pakke: ‘here’
+
+Det følgende objekt er maskeret fra ‘package:lubridate’:
+
+    here
+
+Indlæser krævet pakke: rhdfs
+Indlæser krævet pakke: rJava
+
+HADOOP_CMD=/usr/bin/hadoop
+
+Be sure to run hdfs.init()
+21/04/20 21:26:08 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+21/04/20 21:26:09 WARN shortcircuit.DomainSocketFactory: The short-circuit local reads feature cannot be used because libhadoop cannot be loaded.
+########################################################################
+##                                                                    ##
+##                        BEGIN PROGRAM                               ##
+##                       2021-04-20 21:26:09
+##                                                                    ##
+########################################################################
+  
+##                        CONFIGURATION                               ##
+## YEAR: 2015                                                         ##
+## CORPUS_PATH: /datapool/dk-web-solr/solr-corpus/2015_corpus_solr-parquet-without-dedup
+  
+## SCRIPT: 2021-04-20 21:26:09 - Connect to the Spark cluster
+Registered S3 method overwritten by 'openssl':
+  method      from
+  print.bytes Rcpp
+## SCRIPT: 2021-04-20 21:26:30 - Load the given Solr data
+## SCRIPT: 2021-04-20 21:26:49 - Create a PWID data frame in Spark memory
+## Generated 326196901 PWIDs
+## SCRIPT: 2021-04-20 21:27:09 - Write the PWID list to HDFS
+## data stored at/projects/p002/pwid/2015_pwidlist
+##
+########################################################################
+##                                                                    ##
+##                        END OF PROGRAM                              ##
+##                       2021-04-20 21:58:48
+##                                                                    ##
+########################################################################
+pwid-generator.R <year> <path to corpus>
+
+Vedhæfter pakke: ‘dplyr’
+
+De følgende objekter er maskerede fra ‘package:stats’:
+
+    filter, lag
+
+De følgende objekter er maskerede fra ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Vedhæfter pakke: ‘lubridate’
+
+Det følgende objekt er maskeret fra ‘package:base’:
+
+    date
+
+here() starts at /home/pmdp002/PWID
+
+Vedhæfter pakke: ‘here’
+
+Det følgende objekt er maskeret fra ‘package:lubridate’:
+
+    here
+
+Indlæser krævet pakke: rhdfs
+Indlæser krævet pakke: rJava
+
+HADOOP_CMD=/usr/bin/hadoop
+
+Be sure to run hdfs.init()
+21/04/20 21:58:52 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+21/04/20 21:58:53 WARN shortcircuit.DomainSocketFactory: The short-circuit local reads feature cannot be used because libhadoop cannot be loaded.
+########################################################################
+##                                                                    ##
+##                        BEGIN PROGRAM                               ##
+##                       2021-04-20 21:58:53
+##                                                                    ##
+########################################################################
+  
+##                        CONFIGURATION                               ##
+## YEAR: 2016                                                         ##
+## CORPUS_PATH: /datapool/dk-web-solr/solr-corpus/2016_corpus_solr-parquet-without-dedup
+  
+## SCRIPT: 2021-04-20 21:58:53 - Connect to the Spark cluster
+Registered S3 method overwritten by 'openssl':
+  method      from
+  print.bytes Rcpp
+## SCRIPT: 2021-04-20 21:59:13 - Load the given Solr data
+## SCRIPT: 2021-04-20 21:59:31 - Create a PWID data frame in Spark memory
+## Generated 255325163 PWIDs
+## SCRIPT: 2021-04-20 21:59:51 - Write the PWID list to HDFS
+## data stored at/projects/p002/pwid/2016_pwidlist
+##
+########################################################################
+##                                                                    ##
+##                        END OF PROGRAM                              ##
+##                       2021-04-20 22:24:42
+##                                                                    ##
+########################################################################
